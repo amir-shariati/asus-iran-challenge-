@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<h1>Product List</h1>
+
+<ul>
+    <!-- Iterate over Product list -->
+    {% for product in products %}
+        <!-- Display Product -->
+        <div>{{ product.image_main }}</div>
+        <li><span>Product Name : </span> {{ product.title }}</li>
+        <li><span>Category : </span> {{ product.category }}</li>
+        <li><a href="{{ product.category.get_absolute_url }}/{{ product.slug }}">More detail</a></li>
+        <hr/>
+    <!-- If product list is empty  -->
+    {% empty %}
+        <li>No Products</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
