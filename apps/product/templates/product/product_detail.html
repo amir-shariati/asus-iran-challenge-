@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+</head>
+<body>
+<h1>Product Detail</h1>
+
+{% for img in image_obj %}
+    <img src="{{ img.image.url }}" width="150" height="150">
+{% endfor %}
+
+<hr/>
+<p><span>Product Name : </span> {{ product.title }}</p>
+<p><span>Price : </span> {{ product.price }}</p>
+<p><span>Product count : </span> {{ product.inventory }}</p>
+<p>{{ product.description }}</p>
+
+
+
+</body>
+</html>
